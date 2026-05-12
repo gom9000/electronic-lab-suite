@@ -7,9 +7,7 @@ The circuit allows you to test different types of diodes, which require differen
 ![inside](resources/diode-tester_inside.jpg)
 
 
-## Specifications
-
-### Features
+## Requirements
 - test of voltage drop across a diode under different current values
 - test of the working voltage of a Zener diode (up to $V_{CC}$ minus a fews Volts) under different current values
 - supply voltage ($V_{CC}$) from DC-Adapter $12VDC$ or $24VDC$
@@ -18,14 +16,13 @@ The circuit allows you to test different types of diodes, which require differen
 - protection against reverse polarity of the supply voltage
 
 
-### Schematic
-Schematic and PCB layout are designed with ExpressPCB free CAD software.
+## Design
 
+#### Schematic
 ![board-schematic](resources/diode-tester_sch.jpg)
 
-
-### Circuit
-#### Load driver network:
+#### Circuit Analysis
+**Load driver network:**<br/>
 The load current must be adjustable between $1.0mA$ and $30mA$:
 
 $I_{C3} = V_{BE2}/R_3$
@@ -59,8 +56,7 @@ Assuming $T_A = 30$&deg; $C$:
 
 $T_{Q_{3_{MAX}}} = T_A + P_{Q_{3_{MAX}}}*($ &Theta; $_{tot}) \leq 40$&deg; $C$
 
-
-#### Control & current reference network:
+**Control & current reference network:**<br/>
 The role of the current reference network (a constant current generator) is to absorb the differences in the choice of the $V_{CC}$ value. In this way, the choice of Vcc determines only the maximum value of the Zener voltage that can be measured (tested) by the circuit. The control network (also a constant current generator) keeps the load current constant and ensures that $Q_3$ (and $Q_2$) always operates in the active zone.
 
 $V_{CE_2} = V_{BE_2} + V_{BE_3} = 1.4V$
@@ -85,16 +81,16 @@ $V_{R_1} = V_{CC} - 2* V_D = (10.8 - 22.8)V \implies I_{R_1} = V_{R_1}/R_1 = (.9
 
 (*) If $Q_3$ were not a Darlington, its $H_{FE}$ would be about $15$. In the worst case ($V_{CC}=24V$ and $I_{C_{3}}=50mA$), its base current should be in the $mA$ range, so $Q_1$'s collector current should be set to at least $(10-15)mA$. Since $V_{CE_1}$ must sink virtually all of the $V_{CC}$, the power to be dissipated would require a medium-power transistor for $Q_1$ as well.
 
-#### Display network:
+**Display network:**<br/>
 The display network translates the voltage drop across the diode into a decoupled and ground-referenced signal for the digital voltmeter.<br/>
 The core of this stage is the TL082 operational amplifier, configured as a unity-gain differential amplifier.
 It converts the floating measurement into a single-ended output referred to GND, ensuring compatibility with standard 3-wire digital display modules.<br/>
 The JFET inputs of the OA ensure virtually no current is drawn from the test loop, maintaining the integrity of the selected test current (1mA to 30mA).
 
-*Note: When no diode is connected, the display will show the maximum available voltage (VCC​−Vdrop​). This is normal behavior for a constant current generator operating at no load.*
+*Note*: When no diode is connected, the display will show the maximum available voltage ($VCC​−V_{drop}$​). This is normal behavior for a constant current generator operating at no load.
 
 
-### LTspice Simulation
+#### LTspice Simulation
 Below is the simulation of the circuit with the LTspice software.<br/>
 The simulation plots currents, voltages and powers on the transistors of the circuit, assuming a forward biased diode as a load. The simulation considers 2 different values ​​of $V_{CC}$ $(12V, 30V)$, for each of which the resistance $R_3$ is linearly modified from the value $15$&Omega; to $500$&Omega;, and then brought back to the value $15$&Omega;.<br/>
 Plot 2 shows voltage as a unit of measurement on the Y-axis $(15-500V)$, but it should be read as the resistance in Ohms of $R_3$ $(15-500$&Omega;$)$.<br/>
@@ -104,29 +100,40 @@ For the simulation, the value $H_{FE}=1000$ was set for the transistor $Q_3$.
 <br> 
 
 
-### Calibration Procedure
+## Implementation and Test
+
+#### PCB Layout
+The circuit was assembled on a custom PCB (protoboard).
+
+![board-pcb](resources/diode-tester_pcb.jpg)
+
+#### Calibration Procedure
 Two-step process is required to align the internal measurement electronics and to set the operational test currents. This ensures that the displayed values accurately reflect the load characteristics without interference from component tolerances.
 
-#### Measurement circuit setting:
+**Measurement circuit setting:**<br/>
 This step balances the OA differential bridge to eliminate any residual voltage offset from the op-amp or the driver stage.
 1. Power the circuit without inserting any component into the TEST termnals.
 2. Short-circuit the TEST terminals using a jumper.
 3. Rotate the trimmer R4b until the Volt Meter reads exactly 0.00V.
 
-#### Current ranges setting:
+**Current ranges setting:**<br/>
 This step calibrates each position of the rotary switch (SW1) to deliver the exact programmed test current through the load.
 1. Connect a multimeter set to DC Current (mA) mode across the TEST terminals.
 2. For each switch position, adjust the corresponding trimmer (R3a through R3f) until the multimeter displays the target current (1mA, 2mA, 5mA, 10mA, 20mA, or 30mA).
 
 
-### PCB Layout
-![board-pcb](resources/diode-tester_pcb.jpg)
+#### Test Log
 
 
-## About
-Author : Alessandro Fraschetti (mail: [gos95@gommagomma.net](mailto:gos95@gommagomma.net))
+## Conclusions
+**Results**: 
+  
+**Suggestions**: 
+
+**Evolutions**:
 
 
-## Licence
-This project is under the [MIT license](LICENSE).
-You are free to use this for any purpose, just try to give credit in the documentation of your project.
+## About & License
+**Author**: Alessandro Fraschetti (gom9000).<br/>
+**Technical Notes**: The hardware design was supported by **ExpressPCB** and the custom **[expresspcb-goslib](https://github.com/gom9000/expresspcb-goslib)** libraries.<br/>
+**License**: This experience is licensed under the [MIT License](LICENSE).
