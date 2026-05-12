@@ -18,22 +18,22 @@ The 9V and 12V output lines togheter carry a current up to 250mA.
 
 ## Design
 
-#### Schematic
+### Schematic
 ![board-schematic](resources/mopsu_sch.jpg)
 
-#### Circuit Analysis
+### Circuit Analysis
 
 
 ## Implementation and Test
 
-#### PCB Layout
+### PCB Layout
 The circuit was assembled on a custom PCB (protoboard).
 
 ![board-pcb](resources/mopsu_pcb.jpg)
 
-#### Calibration Procedure
+### Calibration Procedure
 
-#### Test Log
+### Test Log
 
 
 ## Conclusions
