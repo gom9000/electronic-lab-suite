@@ -1,12 +1,12 @@
 # Electronic Lab Suite
-A collection of custom-built laboratory instruments designed for electronic testing, power management, and component characterization.
+A set of custom-built instruments for the electronics workbench, covering power supply, component characterization, and load testing.
 
 The suite is an ongoing project aimed at creating a comprehensive ecosystem of reliable, home-made tools for the electronics workbench. New instruments are developed starting from documented laboratory experiences to ensure maximum reliability and empirical validation.
 
 
 ## Suite Tools
 
-### **[Multi Out Low-Power Supply Unit](./mopsu)**
+### **[Multi Out Low-Power Supply Unit](https://github.com/gom9000/mopsu)**
 **Type**: Power Supply | **Complexity**: Low | **Status**: Completed
 
 A versatile, multi-rail linear low-power supply unit designed to power bench prototypes
@@ -17,7 +17,7 @@ A versatile, multi-rail linear low-power supply unit designed to power bench pro
     - **Linear Stability**: Uses standard $78xx$ series regulators and high-capacity filtering ($10000\mu F$) for low-ripple output.
 
 
-### **[Diode Tester](./diode-tester)**
+### **[Diode Tester](https://github.com/gom9000/diode-tester)**
 **Type**: Component Tester | **Complexity**: Low/Mid | **Status**: Testing
 
 Measure the forward voltage drop ($V_f$) of diodes or the working voltage of Zener diodes under controlled conditions.
@@ -27,7 +27,7 @@ Measure the forward voltage drop ($V_f$) of diodes or the working voltage of Zen
     - **High Voltage Range**: Supports supply voltages up to $30VDC$, allowing characterization of a wide range of Zener diodes.
 
 
-### **[Dummy Load for Low-Power PSU](./dummy-load)**
+### **Dummy Load for Low-Power PSU *(coming soon)***
 **Type**: Active Load | **Complexity**: Mid | **Status**: In Development
 
 A Constant Current (CC) load for PSU stress testing.
@@ -38,6 +38,5 @@ A Constant Current (CC) load for PSU stress testing.
     - **Wide Input Range**: Stable regulation from $1.5V$ up to $30V$.
 
 
-## About & License
-**Author**: Alessandro Fraschetti (gom9000).<br/>
-**License**: This experience is licensed under the [MIT License](LICENSE). The license applies to all the documentation, schematic files, and PCB layouts provided in this repository.
+## About
+**Author**: Alessandro Fraschetti (gom9000).
