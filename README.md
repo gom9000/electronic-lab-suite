@@ -16,7 +16,7 @@ The suite is an ongoing project aimed at creating a comprehensive ecosystem of r
 ### **[Multi Out Low-Power Supply Unit](https://github.com/gom9000/mopsu)**
 **Type**: Power Supply | **Complexity**: Low | **Status**: Completed
 
-A versatile, multi-rail linear low-power supply unit designed to power bench prototypes
+A versatile, multi-rail linear low-power supply unit designed to power bench prototypes.
 
 - **Key Features**:
     - **Quad Output Rails**: Dedicated $3.3V$, $5V$, $9V$, and $12V$ regulated lines.
@@ -47,6 +47,15 @@ A Constant Current (CC) load for PSU stress testing.
 
 ## XP — Documented Experiences
 A series of documented laboratory experiences exploring specific components, techniques, and design approaches. Each repository collects experiments with theoretical background and empirical results, and often serves as the foundation for lab instruments or standalone projects.
+
+### **[xp-dummyload](https://github.com/gom9000/xp-dummyload)**
+**Type**: Active Load | **Complexity**: Low/Mid | **Status**: Development
+
+A series of documented laboratory experiences on building simple dummy loads to test small PSUs.
+
+- **Key Features**:
+    - **Load Type**: Experiences with passive (resistive) and active (MOSFET) load types.
+    - **Operational Mode**: Development of CC, CV, CR and CP operational modes.
 
 
 ## Lib — Libraries & Reusable Assets
