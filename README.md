@@ -3,6 +3,10 @@ Personal index of electronics-related repositories, organized by category.<br/>
 The work here grows from documented experiences: instruments are built after the theory is experienced, libraries emerge from repeated practice, projects are the result of both.<br/>
 A repository may appear in more than one section when it belongs to more than one category.
 
+These projects are guided by the KIS (Keep It Simple) philosophy, which in my vision includes the "build with what you have" principle.
+
+Designing with simple or "standard-grade" components requires extra attention to detail to ensure that hardware limitations do not affect the final reliability. Every "added" element, such as a calibration trimmer or a specific resistor network, is strategically chosen to bridge the gap between minimalist resources and more professional-level results.
+
 
 ## Lab — Instruments & Test Equipment
 A set of custom-built instruments for the electronics workbench, covering power supply, component characterization, and load testing.
