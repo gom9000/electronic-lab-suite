@@ -40,17 +40,17 @@ A series of documented laboratory experiences exploring specific components, tec
 A series of documented laboratory experiences on building simple dummy loads to test small PSUs.
 
 ### **[PowerBank PSU eXPerience](https://github.com/gom9000/xp-powerbank)**
-Type: Power Supply | Status: Development
+**Type**: Power Supply | **Status**: Development
 
 Design experiences and calculations for powering multiple 9V audio stomp boxes, exploring different power sources from external adapters to direct mains connection.
 
 ### **[RaspberryPI eXPerience](https://github.com/gom9000/xp-raspberry)**
-Type: Hardware Interfacing | Status: Ongoing
+**Type**: Hardware Interfacing | **Status**: Ongoing
 
 A collection of experiments focused on interfacing the RaspberryPi with the external world, covering MIDI protocols, shift registers (74HC595/165), and quadrature encoders.
 
 ### **[SwitchBank eXPerience](https://github.com/gom9000/xp-switchbank)**
-Type: Hardware Interfacing | Status: Concept
+**Type**: Hardware Interfacing | **Status**: Concept
 
 A study on the classification and implementation of switch-bank circuits (arrays and matrices), focusing on momentary switches.
 
